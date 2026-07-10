@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap');
+
+
+@theme {
+  --font-tajawal: "Tajawal", sans-serif;
+}
+
+*{
+
+font-family: var(--font-tajawal);
+
+}
+
+
+
+html{
+
+scroll-behavior:smooth;
+
+scroll-padding-top:100px;
+
+}
+
+
+
+body{
+
+background:#fbfaf7;
+
+}
+
+
+
+::selection{
+
+background:#d8a42b;
+
+color:white;
+
+}
+
+
+
+/* Reveal Animation */
+
+
+.reveal{
+
+opacity:0;
+
+transform:translateY(24px);
+
+transition:
+opacity .7s ease,
+transform .7s ease;
+
+}
+
+
+.reveal.show{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+
+
+/* Timeline */
+
+.timeline-line{
+
+background:
+linear-gradient(
+to bottom,
+#2fa2c4,
+#d8a42b
+);
+
+}
+
+
+
+/* Accordion */
+
+.accordion-content{
+
+overflow:hidden;
+
+transition:max-height .4s ease;
+
+}
+
+
+
+/* Dots Background */
+
+.chess-bg-dots{
+
+background-image:
+radial-gradient(#2fa2c4 1px, transparent 1px);
+
+background-size:18px 18px;
+
+opacity:.08;
+
+}
+
+
+
+
+
+
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
