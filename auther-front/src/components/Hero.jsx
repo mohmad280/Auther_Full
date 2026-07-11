@@ -1,6 +1,6 @@
 import hero from "../assets/menberr_2026.png"
 
-function Hero(){
+function Hero({ onRegisterClick }){
 
 return (
 
@@ -67,7 +67,8 @@ mt-10 flex justify-center gap-4
 ">
 
 
-<a
+<button
+onClick={onRegisterClick}
 className="
 bg-[#d8a42b]
 text-white
@@ -79,10 +80,11 @@ font-bold
 
 سجل الآن
 
-</a>
+</button>
 
 
 <a
+
 className="
 border-2
 border-[#2fa2c4]

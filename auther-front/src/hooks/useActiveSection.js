@@ -1,8 +1,10 @@
 import { useEffect } from "react";
 
-function useActiveSection(){
+function useActiveSection(active = true){
 
 useEffect(()=>{
+
+if(!active) return;
 
 const sections = document.querySelectorAll("section");
 const links = document.querySelectorAll(".nav-link");
@@ -71,7 +73,7 @@ observer.observe(section);
 return ()=>observer.disconnect();
 
 
-},[]);
+},[active]);
 
 
 }
