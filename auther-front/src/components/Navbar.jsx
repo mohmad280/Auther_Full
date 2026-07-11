@@ -1,28 +1,40 @@
 import logo from "../assets/athar_logo.png";
 import manbar from "../assets/manbar_logo.png";
 
-function Navbar() {
+function Navbar({ 
+  onHomeClick, 
+  onRegisterClick, 
+  onAboutAtharClick,
+  onAboutManbarClick,
+  onAgendaClick,
+  onFaqClick
+}) {
 
 const links = [
   {
     name: "الرئيسية",
-    path: "#home"
+    action: onHomeClick,
+    type: "button"
   },
   {
     name: "عن أثر",
-    path: "#about-athar"
+    action: onAboutAtharClick,
+    type: "button"
   },
   {
     name: "عن منبر",
-    path: "#about-manbar"
+    action: onAboutManbarClick,
+    type: "button"
   },
   {
     name: "أجندة المسابقة",
-    path: "#agenda"
+    action: onAgendaClick,
+    type: "button"
   },
   {
     name: "الأسئلة المتكررة",
-    path: "#faq"
+    action: onFaqClick,
+    type: "button"
   }
 ];
 
@@ -46,11 +58,13 @@ flex items-center justify-between
 ">
 
 
-<img
-src={logo}
-alt="athar"
-className="h-9"
-/>
+<button onClick={onHomeClick} className="cursor-pointer">
+  <img
+    src={logo}
+    alt="athar"
+    className="h-9"
+  />
+</button>
 
 
 
@@ -62,14 +76,12 @@ rounded-full p-2
 "
 >
 
-
 {
 links.map((link,index)=>(
-
-<a
-key={index}
-href={link.path}
-className="
+  <button
+    key={index}
+    onClick={link.action}
+    className="
 nav-link
 px-4 py-2
 rounded-full
@@ -78,13 +90,11 @@ transition
 text-[#0f4357]
 hover:bg-white
 "
->
-{link.name}
-</a>
-
+  >
+    {link.name}
+  </button>
 ))
 }
-
 
 </nav>
 
@@ -99,8 +109,8 @@ flex items-center gap-4
 >
 
 
-<a
-href="#register"
+<button
+onClick={onRegisterClick}
 className="
 hidden md:block
 bg-[#d8a42b]
@@ -113,7 +123,7 @@ font-bold
 
 سجل الآن / تسجيل الدخول
 
-</a>
+</button>
 
 
 

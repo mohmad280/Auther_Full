@@ -1,7 +1,9 @@
 import { useEffect } from "react";
 
-function useReveal() {
+function useReveal(active = true) {
   useEffect(() => {
+    if (!active) return;
+
     const elements = document.querySelectorAll(".reveal");
 
     const observer = new IntersectionObserver(
@@ -22,7 +24,7 @@ function useReveal() {
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, []);
+  }, [active]);
 }
 
 export default useReveal;
